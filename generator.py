@@ -177,6 +177,7 @@ class Log(object):
         return stdout, stderr
 
     def generate_release_notes(self):
+        self.commits.sort(key=lambda x: x.commit_date)
         for commit in self.commits:
             if commit.c_type == 'feat':
                 self.new_commits.append(commit)
