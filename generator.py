@@ -98,7 +98,7 @@ class Commit(object):
     def __parse_body(body_str):
         """解析body"""
         body_str = body_str.strip()
-        lines = [_ for _ in body_str.split('\n') if _.strip()]
+        lines = [_ for _ in body_str.split('\n')] if body_str else []
         breaking_index = None
         testing_index = None
         for index, line in enumerate(lines):
